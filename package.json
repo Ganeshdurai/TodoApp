@@ -29,7 +29,8 @@
     "express": "^4.16.4",
     "mongoose": "^5.3.14",
     "rxjs": "^5.5.6",
-    "zone.js": "^0.8.19"
+    "zone.js": "^0.8.19",
+    "typescript": "~2.5.3"
   },
   "devDependencies": {
     "@angular/language-service": "^5.2.0",
