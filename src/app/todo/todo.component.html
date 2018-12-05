@@ -1,0 +1,27 @@
+
+
+<div class="container">
+    
+  <h1>Todo List
+      <button [routerLink]="['/todo-create']" class="btn btn-success">
+        +
+      </button>
+  </h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Status</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of todos">
+        <td>{{ todo.title }}</td>
+        <td>{{ todo.status }}</td>
+        <td>
+          <button (click)="deleteData(todo)">delete</button></td>       
+      </tr>
+    </tbody>
+  </table>
+</div>
