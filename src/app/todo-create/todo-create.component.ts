@@ -2,6 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
+import { TodoServiceService } from '../todo-service.service';
+
 
 
 
@@ -19,9 +21,25 @@ export class TodoCreateComponent implements OnInit {
    items = ['Completed','Pending','Opened'];
   
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router, private todoservice: TodoServiceService) { }
 
   ngOnInit() {
+    if(this.todoservice.data){
+      this.todo= this.todoservice.data;
+    }
+  }
+
+  updateTodoDetails(todo){
+    this.http.put('/todo' + '/' + todo._id, todo)
+    .subscribe(res => {
+      this.todoservice.data = {};
+      this.todoservice.data ="";
+      this.router.navigate(['/todos']);
+    }, (err) => {
+      console.log(err);
+    }
+  );
+  
   }
 
   saveBook() {

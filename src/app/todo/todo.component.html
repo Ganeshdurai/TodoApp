@@ -22,8 +22,8 @@
       <tr *ngFor="let todo of todos">
         <td>{{ todo.title }}</td>
         <td>{{ todo.status }}</td>
-        <td>
-          <button (click)="deleteData(todo)">delete</button></td>       
+        <td><button (click) = "updateData(todo)">Update</button></td>
+        <td><button (click)="deleteData(todo)">Delete</button></td>       
       </tr>
     </tbody>
   </table>

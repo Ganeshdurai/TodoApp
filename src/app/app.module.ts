@@ -9,6 +9,8 @@ import { TodoComponent } from './todo/todo.component';
 import { TodoDetailComponent } from './todo-detail/todo-detail.component';
 import { TodoCreateComponent } from './todo-create/todo-create.component';
 import { SigninComponent } from './signin/signin.component';
+import { TodoServiceService } from './todo-service.service';
+
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -80,6 +82,7 @@ const appRoutes: Routes = [
     )
   ],
   providers: [
+    TodoServiceService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs

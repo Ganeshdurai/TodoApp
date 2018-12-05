@@ -27,9 +27,10 @@
         </div>
         
         <div class="form-group">
-          <button type="submit" class="btn btn-success" [disabled]="!todoForm.form.valid">Save</button>
+          <button *ngIf = "!todo._id" type="submit" class="btn btn-success" [disabled]="!todoForm.form.valid">Save</button>
         </div>
       </form>
+      <button *ngIf="todo._id" (click)= updateTodoDetails(todo)> Update</button>
     </div>
   </div>
 </div>
