@@ -20,7 +20,7 @@
 
           
 
-          <select [(ngModel)]="todo.status" name= "status">
+          <select class="form-control" [(ngModel)]="todo.status" name= "status">
             <option value="" disabled selected>select a status</option>
             <option *ngFor="let item of items" [value]="item" >{{item}}</option>
           </select>

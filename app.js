@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({'extended':'false'}));
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use('/todos', express.static(path.join(__dirname, 'dist')));
 app.use('/todo', todo);
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 
 mongoose.connect('mongodb://localhost:27017/todo')
